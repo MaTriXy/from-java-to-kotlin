@@ -1,10 +1,10 @@
 ![](http://upload-images.jianshu.io/upload_images/1110736-25da08f052608195.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-# From Java To Kotlin
+# De Java para Kotlin
 [![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects)
-[![Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
+[![Comunidade Mindorks](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
 
-## 打印日志
+## Imprimir na consola
  - Java
 
 ```java
@@ -21,7 +21,7 @@ println("Amit Shekhar")
 
 ---
 
-## 常量与变量
+## Constantes e Variáveis
 - Java
 
 ```java
@@ -37,7 +37,7 @@ val name = "Amit Shekhar"
 ```
 
 ---
-## null声明
+## Atribuição do valor null
 - Java
 
 ```java
@@ -53,7 +53,7 @@ otherName = null
 ```
 
 ---
-## 空判断
+## Verificar se está null
 -  Java
 
 ```java
@@ -73,7 +73,7 @@ val length = text?.length
 ```
 
 ---
-## 字符串拼接
+## Concatenação de strings
 
 -  Java
 
@@ -92,7 +92,7 @@ val message = "My name is: $firstName $lastName"
 ```
 
 ---
-## 换行
+## Nova linha
 - Java
 
 ```java
@@ -113,7 +113,7 @@ val text = """
 
 ---
 
-## 三元表达式
+## Operação Ternária
 - Java
 
 ```java
@@ -129,7 +129,7 @@ val text = if (x > 5)
 ```
 
 ---
-## 操作符
+## Operadores lógicos
 - java
 
 ```java
@@ -153,7 +153,7 @@ val unsignedRightShift = a ushr 2
 ```
 
 ---
-## 类型判断和转换 (声明式)
+## Verificar o tipo e fazer casting (declarativo)
 - Java
 
 ```java
@@ -171,7 +171,7 @@ var car = object as Car
 ```
 
 ---
-## 类型判断和转换 (隐式)
+## Verificar o tipo e fazer casting (implícito)
 - Java
 
 ```java
@@ -189,7 +189,7 @@ if (object is Car) {
 ```
 
 ---
-## 多重条件
+## múltiplas condições
 - Java
 
 ```java
@@ -203,11 +203,11 @@ if (score in 0..300) { }
 ```
 
 ---
-## 更灵活的case语句
+## múltiplas condições (switch-case)
 - Java
 
 ```java
-int score = // some score;
+int score = // alguma pontuação;
 String grade;
 switch (score) {
     case 10:
@@ -236,7 +236,7 @@ switch (score) {
 - Kotlin
 
 ```kotlin
-var score = // some score
+var score = // alguma pontuação
 var grade = when (score) {
     9, 10 -> "Excellent"
     in 6..8 -> "Good"
@@ -247,7 +247,7 @@ var grade = when (score) {
 ```
 
 ---
-## for循环
+## Ciclo for
 - Java
 
 ```java
@@ -285,7 +285,7 @@ for ((key, value) in map) { }
 ```
 
 ---
-## 更方便的集合操作
+## Operações em Collections
 - Java
 
 ```java
@@ -314,11 +314,11 @@ val keyValue = mapOf(1 to "Amit",
 ```
 
 ---
-## 遍历
+## For each
 - Java
 
 ```java
-// Java 7 and below
+// Java 7 ou inferior
 for (Car car : cars) {
   System.out.println(car.speed);
 }
@@ -326,7 +326,7 @@ for (Car car : cars) {
 // Java 8+
 cars.forEach(car -> System.out.println(car.speed));
 
-// Java 7 and below
+// Java 7 ou inferior
 for (Car car : cars) {
   if (car.speed > 100) {
     System.out.println(car.speed);
@@ -349,16 +349,16 @@ cars.filter { it.speed > 100 }
 ```
 
 ---
-##  方法定义
+##  Definindo Métodos
 - Java
 
 ```java
 void doSomething() {
-   // logic here
+   // lógica aqui
 }
 
 void doSomething(int... numbers) {
-   // logic here
+   // lógica aqui
 }
 ```
 
@@ -366,21 +366,21 @@ void doSomething(int... numbers) {
 
 ```kotlin
 fun doSomething() {
-   // logic here
+   // lógica aqui
 }
 
 fun doSomething(vararg numbers: Int) {
-   // logic here
+   // lógica aqui
 }
 ```
 
 ---
-## 带返回值的方法
+## Definindo Métodos com retorno
 - Java
 
 ```java
 int getScore() {
-   // logic here
+   // lógica aqui
    return score;
 }
 ```
@@ -389,23 +389,23 @@ int getScore() {
 
 ```kotlin
 fun getScore(): Int {
-   // logic here
+   // lógica aqui
    return score
 }
 
-// as a single-expression function
+// como uma função de apenas uma expressão
 
 fun getScore(): Int = score
 ```
 
 ---
 
-## 无结束符号
+## Retornando resultado de uma operação
 - Java
 
 ```java
 int getScore(int value) {
-    // logic here
+   // lógica aqui
     return 2 * value;
 }
 ```
@@ -414,24 +414,24 @@ int getScore(int value) {
 
 ```kotlin
 fun getScore(value: Int): Int {
-   // logic here
+   // lógica aqui
    return 2 * value
 }
 
-// as a single-expression function
+// como uma função de apenas uma expressão
 
 fun getScore(value: Int): Int = 2 * value
 ```
 
 ---
-## constructor 构造器
+## Constructores
 - Java
 
 ```java
 public class Utils {
 
     private Utils() { 
-      // This utility class is not publicly instantiable 
+      // Esta classe não é instanciada de forma pública
     }
     
     public static int getScore(int value) {
@@ -455,7 +455,7 @@ class Utils private constructor() {
     }
 }
 
-// another way
+// de outra forma
 
 object Utils {
 
@@ -467,7 +467,7 @@ object Utils {
 ```
 
 ---
-## Get Set 构造器
+## Getters e Setters
 - Java
 
 ```java
@@ -539,7 +539,7 @@ data class Developer(val name: String, val age: Int)
 public class Utils {
 
     private Utils() { 
-      // This utility class is not publicly instantiable 
+      // Esta classe não é instanciada de forma pública 
     }
     
     public static int triple(int value) {
@@ -602,7 +602,7 @@ enum class Direction constructor(direction: Int) {
 
 ---
 
-### 你需要知道一些比较重要的事
+### Coisas importantes a saber em Kotlin
 * [Learn Kotlin - lateinit vs lazy](https://mindorks.com/blog/learn-kotlin-lateinit-vs-lazy)
 * [Learn Kotlin - apply vs with](https://mindorks.com/blog/learn-kotlin-apply-vs-with)
 * [Learn Kotlin - Data Class](https://mindorks.com/blog/learn-kotlin-data-class)
@@ -610,13 +610,13 @@ enum class Direction constructor(direction: Int) {
 * [Learn Kotlin - Extension Functions](https://mindorks.com/blog/learn-kotlin-extension-functions)
 * [Learn Kotlin - Sealed Classes](https://mindorks.com/blog/learn-kotlin-sealed-classes)
 
-### 如果你觉得这个项目对你有帮助 :heart:
-* 你可以通过点击 :star:表示支持  :v:
+### Achou útil este projecto?  :heart:
+* Mostre o seu apoio clicando no botão :star: no canto superior direito desta página  :v:
 
-[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
+[Veja os maravilhosos projectos open source do Mindorks aqui](https://mindorks.com/open-source-projects)
 
 
-### License
+### Licença
 ```
    Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
 
@@ -632,3 +632,6 @@ enum class Direction constructor(direction: Int) {
    See the License for the specific language governing permissions and
    limitations under the License.
 ```
+
+### Contribuindo para o De Java Para Kotlin
+Basta fazer um pull request. Você está dentro!

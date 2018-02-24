@@ -72,7 +72,7 @@ if (text != null) {
 text?.let {
     val length = text.length
 }
-// or simple
+// or simply
 val length = text?.length
 ```
 
@@ -131,7 +131,7 @@ log(message != null ? message : "");
 val text = if (x > 5)
               "x > 5"
            else "x <= 5"
-	   
+
 val message: String? = null
 log(message ?: "")
 ```
@@ -146,6 +146,7 @@ final int orResult   = a | b;
 final int xorResult  = a ^ b;
 final int rightShift = a >> 2;
 final int leftShift  = a << 2;
+final int unsignedRightShift = a >>> 2;
 ```
 
 > Kotlin
@@ -156,6 +157,7 @@ val orResult   = a or b
 val xorResult  = a xor b
 val rightShift = a shr 2
 val leftShift  = a shl 2
+val unsignedRightShift = a ushr 2
 ```
 
 ---
@@ -235,7 +237,7 @@ switch (score) {
 		break;
 	case 5:
 	case 4:
-		grade = "Ok";
+		grade = "OK";
 		break;
 	case 3:
 	case 2:
@@ -252,9 +254,9 @@ switch (score) {
 ```kotlin
 var score = // some score
 var grade = when (score) {
-	9, 10 -> "Excellent" 
+	9, 10 -> "Excellent"
 	in 6..8 -> "Good"
-	4, 5 -> "Ok"
+	4, 5 -> "OK"
 	in 1..3 -> "Fail"
 	else -> "Fail"
 }
@@ -481,14 +483,14 @@ fun getScore(value: Int) = 2 * value // return-type is int
 ```java
 public class Utils {
 
-    private Utils() { 
-      // This utility class is not publicly instantiable 
+    private Utils() {
+      // This utility class is not publicly instantiable
     }
-    
+
     public static int getScore(int value) {
         return 2 * value;
     }
-    
+
 }
 ```
 
@@ -498,15 +500,15 @@ public class Utils {
 class Utils private constructor() {
 
     companion object {
-    
+
         fun getScore(value: Int): Int {
             return 2 * value
         }
-        
+
     }
 }
 
-// other way is also there
+// another way
 
 object Utils {
 
@@ -605,12 +607,12 @@ public class Developer implements Cloneable {
     }
 }
 
-// cloning or copying 
+// cloning or copying
 Developer dev = new Developer("Mindorks", 30);
 try {
-     Developer dev2 = (Developer) dev.clone();
+    Developer dev2 = (Developer) dev.clone();
 } catch (CloneNotSupportedException e) {
-     // Handle Exception
+    // handle exception
 }
 
 ```
@@ -635,14 +637,14 @@ val dev2 = dev.copy(age = 25)
 ```java
 public class Utils {
 
-    private Utils() { 
-      // This utility class is not publicly instantiable 
+    private Utils() {
+      // This utility class is not publicly instantiable
     }
-    
+
     public static int triple(int value) {
         return 3 * value;
     }
-    
+
 }
 
 int result = Utils.triple(3);
@@ -672,8 +674,43 @@ Person person;
 ```kotlin
 internal lateinit var person: Person
 ```
+> Java
 
+```java
+public enum Direction {
+        NORTH(1),
+        SOUTH(2),
+        WEST(3),
+        EAST(4);
 
+        int direction;
+
+        Direction(int direction) {
+            this.direction = direction;
+        }
+
+        public int getDirection() {
+            return direction;
+        }
+    }
+```
+> Kotlin
+
+```kotlin
+enum class Direction constructor(direction: Int) {
+    NORTH(1),
+    SOUTH(2),
+    WEST(3),
+    EAST(4);
+
+    var direction: Int = 0
+        private set
+
+    init {
+        this.direction = direction
+    }
+}
+```
 ---
 
 ### Important things to know in Kotlin
@@ -708,4 +745,4 @@ internal lateinit var person: Person
 ```
 
 ### Contributing to From Java To Kotlin
-Just make pull request. You are in!
+Just make a pull request. You are in!
