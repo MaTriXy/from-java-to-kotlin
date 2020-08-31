@@ -5,11 +5,17 @@
 # From Java To Kotlin
 [![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects)
 [![Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
+[![Mindorks Android Store](https://img.shields.io/badge/Mindorks%20Android%20Store-From%20Java%20To%20Kotlin-blue.svg?style=flat)](https://mindorks.com/android/store)
+
 > From Java To Kotlin - Your Cheat Sheet For Java To Kotlin
 
 [中文支持](https://github.com/MindorksOpenSource/from-java-to-kotlin/blob/master/README-ZH.md)
 ---
-
+[Português](https://github.com/MindorksOpenSource/from-java-to-kotlin/blob/master/README-PT.md)
+---
+[Español](https://github.com/MindorksOpenSource/from-java-to-kotlin/blob/master/README-ES.md)
+---
+## Print to Console
 > Java
 
 ```java
@@ -25,7 +31,7 @@ println("Amit Shekhar")
 ```
 
 ---
-
+## Constants and Variables
 > Java
 
 ```java
@@ -41,7 +47,7 @@ val name = "Amit Shekhar"
 ```
 
 ---
-
+## Assigning the null value
 > Java
 
 ```java
@@ -57,7 +63,7 @@ otherName = null
 ```
 
 ---
-
+## Verify if value is null
 > Java
 
 ```java
@@ -77,7 +83,7 @@ val length = text?.length
 ```
 
 ---
-
+## Concatenation of strings
 > Java
 
 ```java
@@ -89,13 +95,13 @@ String message = "My name is: " + firstName + " " + lastName;
 > Kotlin
 
 ```kotlin
-val firstName = "Amit"
-val lastName = "Shekhar"
-val message = "My name is: $firstName $lastName"
+var firstName = "Amit"
+var lastName = "Shekhar"
+var message = "My name is: $firstName $lastName"
 ```
 
 ---
-
+## New line in string
 > Java
 
 ```java
@@ -116,6 +122,40 @@ val text = """
 
 ---
 
+## Substring
+> Java
+
+```java
+String str = "Java to Kotlin Guide";
+String substr = "";
+
+//print java
+substr = str.substring(0, 4);
+System.out.println("substring = " + substr);
+
+//print kotlin
+substr = str.substring(8, 14);
+System.out.println("substring = " + substr);
+```
+
+> Kotlin
+
+```kotlin
+var str = "Java to Kotlin Guide"
+var substr = ""
+
+//print java
+substr = str.substring(0..3) //
+println("substring $substr")
+
+//print kotlin
+substr = str.substring(8..13)
+println("substring $substr")
+```
+
+---
+
+## Ternary Operations
 > Java
 
 ```java
@@ -128,16 +168,18 @@ log(message != null ? message : "");
 > Kotlin
 
 ```kotlin
-val text = if (x > 5)
-              "x > 5"
-           else "x <= 5"
+val text = if (x > 5) {
+    "x > 5"
+} else {
+    "x <= 5"
+}
 
 val message: String? = null
 log(message ?: "")
 ```
 
 ---
-
+## Bitwise Operators
 > Java
 
 ```java
@@ -161,7 +203,7 @@ val unsignedRightShift = a ushr 2
 ```
 
 ---
-
+## Check the type and casting
 > Java
 
 ```java
@@ -182,7 +224,7 @@ var car = object as? Car // var car = object as Car?
 ```
 
 ---
-
+## Check the type and casting (implicit)
 > Java
 
 ```java
@@ -205,7 +247,7 @@ if (object is Car?) {
 ```
 
 ---
-
+## Multiple conditions
 > Java
 
 ```java
@@ -219,7 +261,7 @@ if (score in 0..300) { }
 ```
 
 ---
-
+## Multiple Conditions (Switch case)
 > Java
 
 ```java
@@ -263,7 +305,7 @@ var grade = when (score) {
 ```
 
 ---
-
+## For-loops
 > Java
 
 ```java
@@ -293,7 +335,7 @@ for (i in 10 downTo 0) { }
 
 for (i in 1..10 step 2) { }
 
-for (i in 10 downTo 1 step 2) { }
+for (i in 10 downTo 0 step 2) { }
 
 for (item in collection) { }
 
@@ -301,7 +343,7 @@ for ((key, value) in map) { }
 ```
 
 ---
-
+## Collections
 > Java
 
 ```java
@@ -330,7 +372,7 @@ val keyValue = mapOf(1 to "Amit",
 ```
 
 ---
-
+## for each
 > Java
 
 ```java
@@ -351,6 +393,7 @@ for (Car car : cars) {
 
 // Java 8+
 cars.stream().filter(car -> car.speed > 100).forEach(car -> System.out.println(car.speed));
+cars.parallelStream().filter(car -> car.speed > 100).forEach(car -> System.out.println(car.speed));
 ```
 
 > Kotlin
@@ -369,7 +412,7 @@ cars.parallelStream().filter { it.speed > 100 }.forEach { println(it.speed)}
 ```
 
 ---
-
+## Splitting arrays
 > java
 
 ```java
@@ -386,7 +429,7 @@ val (param, value) = "param=car".split("=")
 ```
 
 ---
-
+## Defining methods
 > Java
 
 ```java
@@ -404,7 +447,7 @@ fun doSomething() {
 ```
 
 ---
-
+## Variable number of arguments
 > Java
 
 ```java
@@ -422,7 +465,7 @@ fun doSomething(vararg numbers: Int) {
 ```
 
 ---
-
+## Defining methods with return
 > Java
 
 ```java
@@ -450,7 +493,7 @@ fun getScore() = score // return-type is Int
 ```
 
 ---
-
+## Returning result of an operation
 > Java
 
 ```java
@@ -477,7 +520,7 @@ fun getScore(value: Int) = 2 * value // return-type is int
 ```
 
 ---
-
+## Constructors
 > Java
 
 ```java
@@ -520,7 +563,7 @@ object Utils {
 ```
 
 ---
-
+## Getters and Setters
 > Java
 
 ```java
@@ -587,7 +630,7 @@ data class Developer(var name: String, var age: Int)
 ```
 
 ---
-
+## Cloning or copying
 > Java
 
 ```java
@@ -631,7 +674,7 @@ val dev2 = dev.copy(age = 25)
 ```
 
 ---
-
+## Class methods
 > Java
 
 ```java
@@ -662,7 +705,7 @@ var result = 3.triple()
 ```
 
 ---
-
+## Defining uninitialized objects
 > Java
 
 ```java
@@ -674,6 +717,8 @@ Person person;
 ```kotlin
 internal lateinit var person: Person
 ```
+---
+## enum
 > Java
 
 ```java
@@ -697,29 +742,118 @@ public enum Direction {
 > Kotlin
 
 ```kotlin
-enum class Direction constructor(direction: Int) {
+enum class Direction(val direction: Int) {
     NORTH(1),
     SOUTH(2),
     WEST(3),
     EAST(4);
-
-    var direction: Int = 0
-        private set
-
-    init {
-        this.direction = direction
-    }
 }
 ```
 ---
 
+
+## Sorting List
+> Java
+
+```java
+List<Profile> profiles = loadProfiles(context);
+Collections.sort(profiles, new Comparator<Profile>() {
+    @Override
+    public int compare(Profile profile1, Profile profile2) {
+        if (profile1.getAge() > profile2.getAge()) return 1;
+        if (profile1.getAge() < profile2.getAge()) return -1;
+        return 0;
+    }
+});
+
+```
+
+> Kotlin
+
+```kotlin
+val profile = loadProfiles(context)
+profile.sortedWith(Comparator({ profile1, profile2 ->
+    if (profile1.age > profile2.age) return@Comparator 1
+    if (profile1.age < profile2.age) return@Comparator -1
+    return@Comparator 0
+}))
+```
+---
+
+## Anonymous Class
+> Java
+
+```java
+ AsyncTask<Void, Void, Profile> task = new AsyncTask<Void, Void, Profile>() {
+    @Override
+    protected Profile doInBackground(Void... voids) {
+        // fetch profile from API or DB
+        return null;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        // do something
+    }
+};
+
+```
+
+> Kotlin
+
+```kotlin
+val task = object : AsyncTask<Void, Void, Profile>() {
+    override fun doInBackground(vararg voids: Void): Profile? {
+        // fetch profile from API or DB
+        return null
+    }
+
+    override fun onPreExecute() {
+        super.onPreExecute()
+        // do something
+    }
+}
+```
+---
+## Initialization block
+> Java
+
+```java
+public class User {
+    {  //Initialization block
+        System.out.println("Init block");
+    }
+}
+
+```
+
+> Kotlin
+
+```kotlin
+   class User {
+        init { // Initialization block
+            println("Init block")
+        }
+    }
+```
+
+---
+
 ### Important things to know in Kotlin
-* [Learn Kotlin - lateinit vs lazy](https://mindorks.com/blog/learn-kotlin-lateinit-vs-lazy)
-* [Learn Kotlin - apply vs with](https://mindorks.com/blog/learn-kotlin-apply-vs-with)
-* [Learn Kotlin - Data Class](https://mindorks.com/blog/learn-kotlin-data-class)
-* [Learn Kotlin - Destructuring Declarations](https://mindorks.com/blog/learn-kotlin-destructuring-declarations)
-* [Learn Kotlin - Extension Functions](https://mindorks.com/blog/learn-kotlin-extension-functions)
-* [Learn Kotlin - Sealed Classes](https://mindorks.com/blog/learn-kotlin-sealed-classes)
+* [What is the equivalent of Java static methods in Kotlin?](https://blog.mindorks.com/what-is-the-equivalent-of-java-static-methods-in-kotlin)
+* [What is the difference between "const" and "val"?](https://blog.mindorks.com/what-is-the-difference-between-const-and-val)
+* [Learn Kotlin - lateinit vs lazy](https://blog.mindorks.com/learn-kotlin-lateinit-vs-lazy)
+* [Learn Kotlin - apply vs with](https://blog.mindorks.com/learn-kotlin-apply-vs-with)
+* [Learn Kotlin - Data Class](https://blog.mindorks.com/learn-kotlin-data-class)
+* [Learn Kotlin - Destructuring Declarations](https://blog.mindorks.com/learn-kotlin-destructuring-declarations)
+* [Learn Kotlin - Extension Functions](https://blog.mindorks.com/learn-kotlin-extension-functions)
+* [Learn Kotlin - Sealed Classes](https://blog.mindorks.com/learn-kotlin-sealed-classes)
+* [Understanding Higher-Order Functions and Lambdas in Kotlin](https://blog.mindorks.com/understanding-higher-order-functions-and-lambdas-in-kotlin)
+* [Understanding inline, noinline, and crossinline in Kotlin](https://blog.mindorks.com/understanding-inline-noinline-and-crossinline-in-kotlin)
+* [Mastering Kotlin Coroutines In Android - Step By Step Guide](https://blog.mindorks.com/mastering-kotlin-coroutines-in-android-step-by-step-guide)
+* [Using Scoped Functions in Kotlin - let, run, with, also, apply](https://blog.mindorks.com/using-scoped-functions-in-kotlin-let-run-with-also-apply)
+* [What are Reified Types in Kotlin?](https://blog.mindorks.com/what-are-reified-types-in-kotlin)
 
 ### Found this project useful :heart:
 * Support by clicking the :star: button on the upper right of this page. :v:

@@ -1,10 +1,10 @@
 ![](http://upload-images.jianshu.io/upload_images/1110736-25da08f052608195.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-# De Java para Kotlin
+# De Java a Kotlin
 [![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects)
 [![Comunidade Mindorks](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
 
-## Imprimir na consola
+## Imprimir en Consola
  - Java
 
 ```java
@@ -21,7 +21,7 @@ println("Amit Shekhar")
 
 ---
 
-## Constantes e Variáveis
+## Constantes y Variables
 - Java
 
 ```java
@@ -37,7 +37,7 @@ val name = "Amit Shekhar"
 ```
 
 ---
-## Atribuição do valor null
+## Asignación Valor nulo
 - Java
 
 ```java
@@ -53,7 +53,7 @@ otherName = null
 ```
 
 ---
-## Verificar se está null
+## Verificar si es null
 -  Java
 
 ```java
@@ -73,7 +73,7 @@ val length = text?.length
 ```
 
 ---
-## Concatenação de strings
+## Concatenación de strings
 
 -  Java
 
@@ -92,7 +92,7 @@ val message = "My name is: $firstName $lastName"
 ```
 
 ---
-## Nova linha
+## Nuevas líneas
 - Java
 
 ```java
@@ -113,7 +113,7 @@ val text = """
 
 ---
 
-## Operação Ternária
+## Operación Ternaria
 - Java
 
 ```java
@@ -153,7 +153,7 @@ val unsignedRightShift = a ushr 2
 ```
 
 ---
-## Verificar o tipo e fazer casting (declarativo)
+## Verificar el tipo y el casting (declarativo)
 - Java
 
 ```java
@@ -171,7 +171,7 @@ var car = object as Car
 ```
 
 ---
-## Verificar o tipo e fazer casting (implícito)
+## Verificar el tipo y el casting (implícito)
 - Java
 
 ```java
@@ -189,7 +189,7 @@ if (object is Car) {
 ```
 
 ---
-## múltiplas condições
+## múltiples condiciones
 - Java
 
 ```java
@@ -203,11 +203,11 @@ if (score in 0..300) { }
 ```
 
 ---
-## múltiplas condições (switch-case)
+## múltiples condiciones (switch-case)
 - Java
 
 ```java
-int score = // alguma pontuação;
+int score = // some score;
 String grade;
 switch (score) {
     case 10:
@@ -236,7 +236,7 @@ switch (score) {
 - Kotlin
 
 ```kotlin
-var score = // alguma pontuação
+var score = // some score
 var grade = when (score) {
     9, 10 -> "Excellent"
     in 6..8 -> "Good"
@@ -285,7 +285,7 @@ for ((key, value) in map) { }
 ```
 
 ---
-## Operações em Collections
+## Operaciones en Coliciones
 - Java
 
 ```java
@@ -296,7 +296,7 @@ map.put(1, "Amit");
 map.put(2, "Ali");
 map.put(3, "Mindorks");
 
-// Java 9
+// Java 8+
 final List<Integer> listOfNumber = List.of(1, 2, 3, 4);
 
 final Map<Integer, String> keyValue = Map.of(1, "Amit",
@@ -318,7 +318,7 @@ val keyValue = mapOf(1 to "Amit",
 - Java
 
 ```java
-// Java 7 ou inferior
+// Java 7 o inferior
 for (Car car : cars) {
   System.out.println(car.speed);
 }
@@ -326,7 +326,7 @@ for (Car car : cars) {
 // Java 8+
 cars.forEach(car -> System.out.println(car.speed));
 
-// Java 7 ou inferior
+// Java 7 o inferior
 for (Car car : cars) {
   if (car.speed > 100) {
     System.out.println(car.speed);
@@ -349,16 +349,16 @@ cars.filter { it.speed > 100 }
 ```
 
 ---
-##  Definindo Métodos
+##  Definición de Métodos
 - Java
 
 ```java
 void doSomething() {
-   // lógica aqui
+   // logic here
 }
 
 void doSomething(int... numbers) {
-   // lógica aqui
+   // logic here
 }
 ```
 
@@ -366,21 +366,21 @@ void doSomething(int... numbers) {
 
 ```kotlin
 fun doSomething() {
-   // lógica aqui
+   // logic here
 }
 
 fun doSomething(vararg numbers: Int) {
-   // lógica aqui
+   // logic here
 }
 ```
 
 ---
-## Definindo Métodos com retorno
+## Definición de Métodos con retorno
 - Java
 
 ```java
 int getScore() {
-   // lógica aqui
+   // logic here
    return score;
 }
 ```
@@ -389,23 +389,27 @@ int getScore() {
 
 ```kotlin
 fun getScore(): Int {
-   // lógica aqui
+   // logic here
    return score
 }
 
-// como uma função de apenas uma expressão
+// como una función expresión-simple
 
 fun getScore(): Int = score
+
+// incluso más simple (el tipo de retorno lo hará automáticamente)
+
+fun getScore() = score // tipo de retorno es Int
 ```
 
 ---
 
-## Retornando resultado de uma operação
+## Retornando resultado de una operación
 - Java
 
 ```java
 int getScore(int value) {
-   // lógica aqui
+   // logic here
     return 2 * value;
 }
 ```
@@ -414,11 +418,11 @@ int getScore(int value) {
 
 ```kotlin
 fun getScore(value: Int): Int {
-   // lógica aqui
+   // logic here
    return 2 * value
 }
 
-// como uma função de apenas uma expressão
+// una expresión-función
 
 fun getScore(value: Int): Int = 2 * value
 ```
@@ -431,7 +435,7 @@ fun getScore(value: Int): Int = 2 * value
 public class Utils {
 
     private Utils() { 
-      // Esta classe não é instanciada de forma pública
+      // Esta clase utilitaría no es una instancia pública
     }
     
     public static int getScore(int value) {
@@ -455,7 +459,7 @@ class Utils private constructor() {
     }
 }
 
-// de outra forma
+// de otra forma
 
 object Utils {
 
@@ -467,7 +471,7 @@ object Utils {
 ```
 
 ---
-## Getters e Setters
+## Getters y Setters
 - Java
 
 ```java
@@ -539,7 +543,7 @@ data class Developer(val name: String, val age: Int)
 public class Utils {
 
     private Utils() { 
-      // Esta classe não é instanciada de forma pública 
+      // Esta clase utilitaría no es una instancia pública
     }
     
     public static int triple(int value) {
@@ -583,7 +587,6 @@ public enum Direction {
     }
 ```
 - Kotlin
-
 ```kotlin
 enum class Direction(val direction: Int) {
     NORTH(1),
@@ -593,10 +596,9 @@ enum class Direction(val direction: Int) {
 }
 ```
 
-
 ---
 
-### Coisas importantes a saber em Kotlin
+### Importantes cosas a saber en Kotlin
 * [Learn Kotlin - lateinit vs lazy](https://blog.mindorks.com/learn-kotlin-lateinit-vs-lazy)
 * [Learn Kotlin - apply vs with](https://blog.mindorks.com/learn-kotlin-apply-vs-with)
 * [Learn Kotlin - Data Class](https://blog.mindorks.com/learn-kotlin-data-class)
@@ -604,13 +606,13 @@ enum class Direction(val direction: Int) {
 * [Learn Kotlin - Extension Functions](https://blog.mindorks.com/learn-kotlin-extension-functions)
 * [Learn Kotlin - Sealed Classes](https://blog.mindorks.com/learn-kotlin-sealed-classes)
 
-### Achou útil este projecto?  :heart:
-* Mostre o seu apoio clicando no botão :star: no canto superior direito desta página  :v:
+### Encuentras este proyecto útil?  :heart:
+* Muestra tu apoyo haciendo click en el botón :star: en la parte superior izquierda  :v:
 
-[Veja os maravilhosos projectos open source do Mindorks aqui](https://mindorks.com/open-source-projects)
+[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
 
-### Licença
+### Licencia
 ```
    Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
 
@@ -627,5 +629,5 @@ enum class Direction(val direction: Int) {
    limitations under the License.
 ```
 
-### Contribuindo para o De Java Para Kotlin
-Basta fazer um pull request. Você está dentro!
+### Contributing to From Java To Kotlin
+Just make a pull request. You are in!
