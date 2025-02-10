@@ -1,20 +1,24 @@
 <p align="center">
-<img alt="FromJavaToKotlin" src="https://raw.githubusercontent.com/MindorksOpenSource/from-java-to-kotlin/master/assets/from_java_to_kotlin.png">
+<img alt="FromJavaToKotlin" src="https://raw.githubusercontent.com/amitshekhariitbhu/from-java-to-kotlin/master/assets/from_java_to_kotlin.png">
 </p>
 
 # From Java To Kotlin
-[![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects)
-[![Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
-[![Mindorks Android Store](https://img.shields.io/badge/Mindorks%20Android%20Store-From%20Java%20To%20Kotlin-blue.svg?style=flat)](https://mindorks.com/android/store)
 
 > From Java To Kotlin - Your Cheat Sheet For Java To Kotlin
 
-[中文支持](https://github.com/MindorksOpenSource/from-java-to-kotlin/blob/master/README-ZH.md)
----
-[Português](https://github.com/MindorksOpenSource/from-java-to-kotlin/blob/master/README-PT.md)
----
-[Español](https://github.com/MindorksOpenSource/from-java-to-kotlin/blob/master/README-ES.md)
----
+## About me
+
+Hi, I am Amit Shekhar, Co-Founder @ [Outcome School](https://outcomeschool.com) • IIT 2010-14 • I have taught and mentored many developers, and their efforts landed them high-paying tech jobs, helped many tech companies in solving their unique problems, and created many open-source libraries being used by top companies. I am passionate about sharing knowledge through open-source, blogs, and videos.
+
+You can connect with me on:
+
+- [Twitter](https://twitter.com/amitiitbhu)
+- [YouTube](https://www.youtube.com/@amitshekhar)
+- [LinkedIn](https://www.linkedin.com/in/amit-shekhar-iitbhu)
+- [GitHub](https://github.com/amitshekhariitbhu)
+
+## Join **Outcome School** and get high paying tech job: [Outcome School](https://outcomeschool.com)
+
 ## Print to Console
 > Java
 
@@ -82,6 +86,29 @@ text?.let {
 val length = text?.length
 ```
 
+---
+## Verify if value is NotNull  OR NotEmpty
+> Java
+```java
+String sampleString = "Shekhar";
+if (!sampleString.isEmpty()) {
+    myTextView.setText(sampleString);
+}
+if(sampleString!=null && !sampleString.isEmpty()){
+    myTextView.setText(sampleString); 
+}
+```
+> Kotlin
+
+```kotlin
+var sampleString ="Shekhar"
+if(sampleString.isNotEmpty()){  //the feature of kotlin extension function
+    myTextView.text=sampleString
+}
+if(!sampleString.isNullOrEmpty()){
+   myTextView.text=sampleString 
+}
+```
 ---
 ## Concatenation of strings
 > Java
@@ -168,11 +195,7 @@ log(message != null ? message : "");
 > Kotlin
 
 ```kotlin
-val text = if (x > 5) {
-    "x > 5"
-} else {
-    "x <= 5"
-}
+val text = if (x > 5) "x > 5" else "x <= 5"
 
 val message: String? = null
 log(message ?: "")
@@ -208,16 +231,16 @@ val unsignedRightShift = a ushr 2
 
 ```java
 if (object instanceof Car) {
+  Car car = (Car) object;
 }
-Car car = (Car) object;
 ```
 
 > Kotlin
 
 ```kotlin
 if (object is Car) {
-}
 var car = object as Car
+}
 
 // if object is null
 var car = object as? Car // var car = object as Car?
@@ -268,26 +291,26 @@ if (score in 0..300) { }
 int score = // some score;
 String grade;
 switch (score) {
-	case 10:
-	case 9:
-		grade = "Excellent";
-		break;
-	case 8:
-	case 7:
-	case 6:
-		grade = "Good";
-		break;
-	case 5:
-	case 4:
-		grade = "OK";
-		break;
-	case 3:
-	case 2:
-	case 1:
-		grade = "Fail";
-		break;
-	default:
-	    grade = "Fail";				
+  case 10:
+  case 9:
+    grade = "Excellent";
+    break;
+  case 8:
+  case 7:
+  case 6:
+    grade = "Good";
+    break;
+  case 5:
+  case 4:
+    grade = "OK";
+    break;
+  case 3:
+  case 2:
+  case 1:
+    grade = "Fail";
+    break;
+  default:
+      grade = "Fail";       
 }
 ```
 
@@ -296,11 +319,10 @@ switch (score) {
 ```kotlin
 var score = // some score
 var grade = when (score) {
-	9, 10 -> "Excellent"
-	in 6..8 -> "Good"
-	4, 5 -> "OK"
-	in 1..3 -> "Fail"
-	else -> "Fail"
+  9, 10 -> "Excellent"
+  in 6..8 -> "Good"
+  4, 5 -> "OK"
+  else -> "Fail"
 }
 ```
 
@@ -351,15 +373,15 @@ final List<Integer> listOfNumber = Arrays.asList(1, 2, 3, 4);
 
 final Map<Integer, String> keyValue = new HashMap<Integer, String>();
 map.put(1, "Amit");
-map.put(2, "Ali");
-map.put(3, "Mindorks");
+map.put(2, "Anand");
+map.put(3, "Messi");
 
 // Java 9
 final List<Integer> listOfNumber = List.of(1, 2, 3, 4);
 
 final Map<Integer, String> keyValue = Map.of(1, "Amit",
-                                             2, "Ali",
-                                             3, "Mindorks");
+                                             2, "Anand",
+                                             3, "Messi");
 ```
 
 > Kotlin
@@ -367,8 +389,8 @@ final Map<Integer, String> keyValue = Map.of(1, "Amit",
 ```kotlin
 val listOfNumber = listOf(1, 2, 3, 4)
 val keyValue = mapOf(1 to "Amit",
-                     2 to "Ali",
-                     3 to "Mindorks")
+                     2 to "Anand",
+                     3 to "Messi")
 ```
 
 ---
@@ -444,6 +466,30 @@ void doSomething() {
 fun doSomething() {
    // logic here
 }
+```
+
+### Default values for method parameters
+> Java
+
+```java
+double calculateCost(int quantity, double pricePerItem) {
+    return pricePerItem * quantity;
+}
+
+double calculateCost(int quantity) {
+    // default price is 20.5
+    return 20.5 * quantity;
+}
+```
+
+> Kotlin
+
+```kotlin
+fun calculateCost(quantity: Int, pricePerItem: Double = 20.5) = quantity * pricePerItem
+
+calculateCost(10, 25.0) // 250
+calculateCost(10) // 205
+
 ```
 
 ---
@@ -651,7 +697,7 @@ public class Developer implements Cloneable {
 }
 
 // cloning or copying
-Developer dev = new Developer("Mindorks", 30);
+Developer dev = new Developer("Messi", 30);
 try {
     Developer dev2 = (Developer) dev.clone();
 } catch (CloneNotSupportedException e) {
@@ -666,7 +712,7 @@ try {
 data class Developer(var name: String, var age: Int)
 
 // cloning or copying
-val dev = Developer("Mindorks", 30)
+val dev = Developer("Messi", 30)
 val dev2 = dev.copy()
 // in case you only want to copy selected properties
 val dev2 = dev.copy(age = 25)
@@ -674,7 +720,64 @@ val dev2 = dev.copy(age = 25)
 ```
 
 ---
-## Class methods
+## Generics
+> Java
+
+```java
+
+// Example #1
+interface SomeInterface<T> {
+    void doSomething(T data);
+}
+
+class SomeClass implements SomeInterface<String> {
+    @Override
+    public void doSomething(String data) {
+        // some logic
+    }
+}
+
+// Example #2
+interface SomeInterface<T extends Collection<?>> {
+    void doSomething(T data);
+}
+
+class SomeClass implements SomeInterface<List<String>> {
+
+    @Override
+    public void doSomething(List<String> data) {
+        // some logic
+    }
+}
+
+```
+
+> Kotlin
+
+```kotlin
+interface SomeInterface<T> {
+    fun doSomething(data: T)
+}
+
+class SomeClass: SomeInterface<String> {
+    override fun doSomething(data: String) {
+        // some logic
+    }
+}
+
+interface SomeInterface<T: Collection<*>> {
+    fun doSomething(data: T)
+}
+
+class SomeClass: SomeInterface<List<String>> {
+    override fun doSomething(data: List<String>) {
+        // some logic
+    }
+}
+```
+
+---
+## Extension function
 > Java
 
 ```java
@@ -841,29 +944,45 @@ public class User {
 ---
 
 ### Important things to know in Kotlin
-* [What is the equivalent of Java static methods in Kotlin?](https://blog.mindorks.com/what-is-the-equivalent-of-java-static-methods-in-kotlin)
-* [What is the difference between "const" and "val"?](https://blog.mindorks.com/what-is-the-difference-between-const-and-val)
-* [Learn Kotlin - lateinit vs lazy](https://blog.mindorks.com/learn-kotlin-lateinit-vs-lazy)
-* [Learn Kotlin - apply vs with](https://blog.mindorks.com/learn-kotlin-apply-vs-with)
-* [Learn Kotlin - Data Class](https://blog.mindorks.com/learn-kotlin-data-class)
-* [Learn Kotlin - Destructuring Declarations](https://blog.mindorks.com/learn-kotlin-destructuring-declarations)
-* [Learn Kotlin - Extension Functions](https://blog.mindorks.com/learn-kotlin-extension-functions)
-* [Learn Kotlin - Sealed Classes](https://blog.mindorks.com/learn-kotlin-sealed-classes)
-* [Understanding Higher-Order Functions and Lambdas in Kotlin](https://blog.mindorks.com/understanding-higher-order-functions-and-lambdas-in-kotlin)
-* [Understanding inline, noinline, and crossinline in Kotlin](https://blog.mindorks.com/understanding-inline-noinline-and-crossinline-in-kotlin)
-* [Mastering Kotlin Coroutines In Android - Step By Step Guide](https://blog.mindorks.com/mastering-kotlin-coroutines-in-android-step-by-step-guide)
-* [Using Scoped Functions in Kotlin - let, run, with, also, apply](https://blog.mindorks.com/using-scoped-functions-in-kotlin-let-run-with-also-apply)
-* [What are Reified Types in Kotlin?](https://blog.mindorks.com/what-are-reified-types-in-kotlin)
+
+- [Mastering Kotlin Coroutines](https://outcomeschool.com/blog/kotlin-coroutines) - Mastering Kotlin Coroutines
+- [Dispatchers in Kotlin Coroutines](https://outcomeschool.com/blog/dispatchers-in-kotlin-coroutines) - Dispatchers in Kotlin Coroutines
+- [coroutineScope vs supervisorScope](https://outcomeschool.com/blog/coroutinescope-vs-supervisorscope) - coroutineScope vs supervisorScope
+- [CoroutineContext in Kotlin](https://outcomeschool.com/blog/coroutinecontext-in-kotlin) - CoroutineContext in Kotlin
+- [What is Flow API in Kotlin?](https://outcomeschool.com/blog/flow-api-in-kotlin) - What is Flow API in Kotlin?
+- [Long-running tasks in parallel with Kotlin Flow](https://outcomeschool.com/blog/long-running-tasks-in-parallel-with-kotlin-flow) - Long-running tasks in parallel with Kotlin Flow
+- [Retry Operator in Kotlin Flow](https://outcomeschool.com/blog/retry-operator-in-kotlin-flow) - Retry Operator in Kotlin Flow
+- [Callback to Coroutines in Kotlin](https://outcomeschool.com/blog/callback-to-coroutines-in-kotlin) - Callback to Coroutines in Kotlin
+- [Retrofit with Kotlin Flow](https://outcomeschool.com/blog/retrofit-with-kotlin-flow) - Retrofit with Kotlin Flow
+- [Room Database with Kotlin Flow](https://outcomeschool.com/blog/room-database-with-kotlin-flow) - Room Database with Kotlin Flow
+- [Remove duplicates from an array](https://outcomeschool.com/blog/remove-duplicates-from-an-array-in-kotlin) - Remove duplicates from an array in Kotlin
+- [JvmStatic Annotation in Kotlin](https://outcomeschool.com/blog/jvmstatic-annotation-in-kotlin) - JvmStatic Annotation in Kotlin
+- [JvmOverloads Annotation in Kotlin](https://outcomeschool.com/blog/jvmoverloads-annotation-in-kotlin) - JvmOverloads Annotation in Kotlin
+- [JvmField Annotation in Kotlin](https://outcomeschool.com/blog/jvmfield-annotation-in-kotlin) - JvmField Annotation in Kotlin
+- [inline function in Kotlin](https://outcomeschool.com/blog/inline-function-in-kotlin) - inline function in Kotlin
+- [noinline in Kotlin](https://outcomeschool.com/blog/noinline-in-kotlin) - noinline in Kotlin
+- [crossinline in Kotlin](https://outcomeschool.com/blog/crossinline-in-kotlin) - crossinline in Kotlin
+- [lateinit vs lazy in Kotlin](https://outcomeschool.com/blog/lateinit-vs-lazy-in-kotlin) - lateinit vs lazy in Kotlin
+- [init block in Kotlin](https://outcomeschool.com/blog/init-block-in-kotlin) - init block in Kotlin
+- [Retrofit with Kotlin Coroutines](https://outcomeschool.com/blog/retrofit-with-kotlin-coroutines) - Retrofit with Kotlin Coroutines
+- [Advantage of using const in Kotlin](https://outcomeschool.com/blog/const-in-kotlin) - Advantage of using const in Kotlin
+- [AssociateBy - List to Map in Kotlin](https://outcomeschool.com/blog/associateby-list-to-map-in-kotlin) - Kotlin Collection Functions - associateBy that converts a list into a map
+- [partition - filtering function in Kotlin](https://outcomeschool.com/blog/partition-filtering-function-in-kotlin) - partition - filtering function in Kotlin
+- [Infix notation in Kotlin](https://outcomeschool.com/blog/infix-notation-in-kotlin) - Infix notation in Kotlin
+- [Open keyword in Kotlin](https://outcomeschool.com/blog/open-keyword-in-kotlin) - Open keyword in Kotlin
+- [Companion object in Kotlin](https://outcomeschool.com/blog/companion-object-in-kotlin) - Companion object in Kotlin
+- [Extension function in Kotlin](https://outcomeschool.com/blog/extension-function-in-kotlin) - Extension function in Kotlin
+- [data class in Kotlin](https://outcomeschool.com/blog/data-class-in-kotlin) - data class in Kotlin
+- [How does the Kotlin Multiplatform work?](https://outcomeschool.com/blog/how-does-the-kotlin-multiplatform-work) - How does the Kotlin Multiplatform work?
+
+## Join **Outcome School** and get high paying tech job: [Outcome School](https://outcomeschool.com)
 
 ### Found this project useful :heart:
 * Support by clicking the :star: button on the upper right of this page. :v:
 
-[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
-
-
 ### License
 ```
-   Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
+   Copyright (C) 2024 Amit Shekhar
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
